@@ -1,0 +1,16 @@
+{
+  "sprint": 1,
+  "name": "Foundation & Initial Rebrand",
+  "version": "1.0.0",
+  "status": "completed",
+  "upstreamReference": "https://github.com/obra/superpowers",
+  "license": "MIT (Preserved Attribution to Jesse Vincent)",
+  "deliverables": [
+    "Monorepo Repository Layout",
+    "OmniForge CLI Entrypoint",
+    "Multi-Transport MCP Base",
+    "14 Core Agent Skills",
+    "Core Documentation & Governance Files",
+    "Private GitHub Repository Deployment"
+  ]
+}

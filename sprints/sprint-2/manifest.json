@@ -1,0 +1,13 @@
+{
+  "sprint": 2,
+  "name": "Architecture & Repository Structure Refactoring",
+  "version": "1.1.0",
+  "status": "completed",
+  "deliverables": [
+    "Domain Error Hierarchy in @omniforge/core",
+    "File Log Sinks & Env Overrides",
+    "Modularized CLI Subcommands",
+    "Workflow Execution Engine",
+    "Categorized Vitest Test Suite (15 passing tests)"
+  ]
+}

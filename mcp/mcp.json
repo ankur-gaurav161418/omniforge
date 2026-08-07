@@ -1,0 +1,40 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/mcp.json",
+  "name": "OmniForge MCP Server",
+  "version": "1.2.0",
+  "description": "Production-Ready MCP Server for OmniForge AI Engineering Framework",
+  "vendor": "OmniForge Team (Derived from obra/superpowers by Jesse Vincent)",
+  "homepage": "https://github.com/ankur-gaurav161418/omniforge",
+  "license": "MIT",
+  "protocolVersion": "2024-11-05",
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    },
+    "prompts": {
+      "listChanged": true
+    },
+    "resources": {
+      "subscribe": true,
+      "listChanged": true
+    },
+    "sampling": {},
+    "logging": {}
+  },
+  "transports": [
+    {
+      "type": "stdio",
+      "command": "node",
+      "args": ["mcp/dist/server.js"]
+    },
+    {
+      "type": "http",
+      "endpoint": "http://localhost:8080/rpc",
+      "healthCheck": "http://localhost:8080/health"
+    },
+    {
+      "type": "sse",
+      "endpoint": "http://localhost:8080/sse"
+    }
+  ]
+}
