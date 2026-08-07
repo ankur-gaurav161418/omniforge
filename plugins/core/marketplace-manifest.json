@@ -1,0 +1,23 @@
+{
+  "name": "OmniForge Plugin Marketplace Registry",
+  "version": "1.0.0",
+  "author": "Ankur Gaurav",
+  "plugins": [
+    {
+      "id": "git-enhancer",
+      "name": "Git Worktree Enhancer",
+      "version": "1.0.0",
+      "author": "Ankur Gaurav",
+      "category": "developer-tools",
+      "description": "Automated Git worktree isolation for subagent execution"
+    },
+    {
+      "id": "security-auditor",
+      "name": "Security & Secret Leak Auditor",
+      "version": "1.0.0",
+      "author": "Ankur Gaurav",
+      "category": "security",
+      "description": "Scans workspace files for API key leaks and OWASP vulnerabilities"
+    }
+  ]
+}

@@ -1,20 +1,22 @@
 # OmniForge CLI Reference Guide
 
-The `omniforge` CLI provides a unified control interface for local workspace management, health diagnostics, workflow execution, and skill validation.
+**Author**: Ankur Gaurav
+
+---
 
 ## Command Reference
 
-### `omniforge init`
-Initializes `.omniforge/config.json` with workspace default settings.
-
-### `omniforge doctor`
-Runs comprehensive diagnostic checks on Node environment, MCP transports, skills validation, and workspace configuration integrity.
-
-### `omniforge status`
-Displays active project name, version, MCP server port, transport, and telemetry status.
-
-### `omniforge workflow <name>`
-Executes pre-packaged workflows such as `engineering-workflow` or `testing-workflow`.
-
-### `omniforge skill <list|inspect|validate> [name]`
-Lists, inspects, or validates skills in the local workspace catalog.
+| Command | Usage | Description |
+|---|---|---|
+| `omniforge init` | `omniforge init` | Initialize workspace configuration |
+| `omniforge install` | `omniforge install` | Install plugins and dependencies |
+| `omniforge update` | `omniforge update` | Refresh skill and prompt catalogs |
+| `omniforge doctor` | `omniforge doctor` | Run diagnostic health check |
+| `omniforge search` | `omniforge search <query>` | Search skills, prompts, workflows |
+| `omniforge list` | `omniforge list` | List all available assets |
+| `omniforge run` | `omniforge run <task>` | Execute autonomous agent task |
+| `omniforge workflow` | `omniforge workflow <name>` | Execute engineering workflow |
+| `omniforge skill` | `omniforge skill list` | Manage agent skills catalog |
+| `omniforge prompt` | `omniforge prompt get <id>` | Inspect and render prompt templates |
+| `omniforge version` | `omniforge version` | Print version metadata |
+| `omniforge config` | `omniforge config get <key>` | Get or set configuration keys |

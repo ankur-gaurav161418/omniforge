@@ -1,29 +1,29 @@
 # OmniForge Architecture Guide
 
-## Hexagonal & Clean Architecture Principles
+**Author**: Ankur Gaurav (https://github.com/ankur-gaurav161418)  
+**License**: MIT License
 
-OmniForge is designed around decoupled hexagonal boundaries:
+---
 
-1. **Domain Core** (`packages/core`): Contains zero external framework dependencies. Manages configuration state, log streams, and plugin discovery.
-2. **Application Services** (`skills/`, `prompts/`, `workflows/`): Encapsulates execution strategies, TDD lifecycles, and interactive agent skills.
-3. **Adapters & Transports** (`cli/`, `mcp/`): Provides CLI entrypoints and multi-transport MCP endpoints (STDIO, HTTP, SSE) for client connection.
+## High-Level Architecture Overview
 
-## Data Flow Diagram
+OmniForge MCP is designed around Clean Architecture and Hexagonal boundaries. The system decouples protocol adapters (STDIO, HTTP, SSE) from core domain services (Skill Engine, Prompt Engine, Workflow Runner, Plugin Loader).
 
+```mermaid
+graph TD
+    Client["AI Client / IDE"] --> Transport["Multi-Transport Server"]
+    Transport --> Core["OmniForge Core Engine"]
+    Core --> Skills["Skill Catalog (14 Skills)"]
+    Core --> Prompts["Prompt Catalog (10 Templates)"]
+    Core --> Workflows["Workflow Engine (10 Workflows)"]
+    Core --> Plugins["Plugin Manager"]
 ```
-[Agent Client (Claude / Gemini / Cursor)]
-                   │
-                   ▼ (STDIO / HTTP / SSE)
-          [OmniForge MCP Server]
-                   │
-       ┌───────────┴───────────┐
-       ▼                       ▼
- [Skill Engine]        [Prompt Engine]
-       │                       │
-       └───────────┬───────────┘
-                   ▼
-          [Workflow Runner]
-                   │
-                   ▼
-     [Target Codebase Worktree]
-```
+
+## Core Packages
+
+1. **`@omniforge/core`**: Base config, logger, telemetry, plugin loader, error hierarchy, update manager.
+2. **`@omniforge/sdk`**: TypeScript & Python client SDKs.
+3. **`@omniforge/mcp-server`**: Multi-transport MCP server (STDIO, HTTP, SSE).
+4. **`@omniforge/skills`**: Skill Engine, validator, indexer, and catalog.
+5. **`@omniforge/prompts`**: Prompt Engine, validator, indexer, and templates.
+6. **`omniforge`**: Modular CLI binary (12 operational subcommands).
