@@ -1,0 +1,10 @@
+{
+  "id": "release-workflow",
+  "name": "Release Workflow",
+  "version": "1.0.0",
+  "description": "Semantic version bump, changelog update, release tag creation, and artifact deployment",
+  "steps": [
+    { "step": 1, "name": "Branch & Changelog Finalization", "skill": "finishing-a-development-branch" },
+    { "step": 2, "name": "Build & Verification", "skill": "verification-before-completion" }
+  ]
+}

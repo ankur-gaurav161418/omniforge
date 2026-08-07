@@ -1,0 +1,10 @@
+{
+  "id": "prd-workflow",
+  "name": "PRD Workflow",
+  "version": "1.0.0",
+  "description": "Product Requirements Document generation, scope definition, and user acceptance criteria drafting",
+  "steps": [
+    { "step": 1, "name": "Feature Discovery", "skill": "brainstorming" },
+    { "step": 2, "name": "Specification Drafting", "skill": "writing-plans" }
+  ]
+}

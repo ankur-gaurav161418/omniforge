@@ -1,3 +1,4 @@
+export * from './errors/errors.js';
 export * from './config/config-manager.js';
 export * from './logging/logger.js';
 export * from './telemetry/telemetry.js';

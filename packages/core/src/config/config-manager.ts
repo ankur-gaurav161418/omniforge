@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { ConfigError } from '../errors/errors.js';
 
 export interface OmniForgeConfig {
   projectName: string;
@@ -54,16 +55,33 @@ export class ConfigManager {
   }
 
   public loadConfig(): OmniForgeConfig {
+    let loadedConfig: OmniForgeConfig = { ...DEFAULT_CONFIG };
     try {
       if (fs.existsSync(this.configPath)) {
         const raw = fs.readFileSync(this.configPath, 'utf-8');
         const parsed = JSON.parse(raw);
-        return { ...DEFAULT_CONFIG, ...parsed };
+        loadedConfig = { ...DEFAULT_CONFIG, ...parsed };
       }
     } catch (err) {
-      // Fallback to default if load fails
+      // Fallback cleanly
     }
-    return { ...DEFAULT_CONFIG };
+
+    // Apply Environment Variable Overrides
+    if (process.env.OMNIFORGE_MCP_PORT) {
+      const parsedPort = parseInt(process.env.OMNIFORGE_MCP_PORT, 10);
+      if (!isNaN(parsedPort)) loadedConfig.mcpServer.port = parsedPort;
+    }
+    if (process.env.OMNIFORGE_MCP_TRANSPORT) {
+      const transport = process.env.OMNIFORGE_MCP_TRANSPORT.toLowerCase();
+      if (['stdio', 'http', 'sse'].includes(transport)) {
+        loadedConfig.mcpServer.transport = transport as any;
+      }
+    }
+    if (process.env.OMNIFORGE_TELEMETRY) {
+      loadedConfig.telemetry.enabled = process.env.OMNIFORGE_TELEMETRY === 'true';
+    }
+
+    return loadedConfig;
   }
 
   public saveConfig(config: Partial<OmniForgeConfig>): OmniForgeConfig {
@@ -93,5 +111,12 @@ export class ConfigManager {
       valid: errors.length === 0,
       errors,
     };
+  }
+
+  public assertValidConfig(): void {
+    const validation = this.validateConfig();
+    if (!validation.valid) {
+      throw new ConfigError(`Invalid OmniForge configuration: ${validation.errors.join(', ')}`);
+    }
   }
 }

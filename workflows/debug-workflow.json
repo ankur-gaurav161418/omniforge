@@ -1,0 +1,11 @@
+{
+  "id": "debug-workflow",
+  "name": "Debug Workflow",
+  "version": "1.0.0",
+  "description": "Scientific defect isolation, log extraction, reproduction test generation, and verification fix",
+  "steps": [
+    { "step": 1, "name": "Log Extraction & Hypothesis", "skill": "systematic-debugging" },
+    { "step": 2, "name": "Failing Test Reproduction", "skill": "test-driven-development" },
+    { "step": 3, "name": "Resolution Verification", "skill": "verification-before-completion" }
+  ]
+}

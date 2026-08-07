@@ -1,8 +1,12 @@
+import * as fs from 'fs';
+import * as path from 'path';
+
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
 export interface LogEntry {
   timestamp: string;
   level: LogLevel;
+  prefix: string;
   message: string;
   context?: Record<string, unknown>;
 }
@@ -10,10 +14,23 @@ export interface LogEntry {
 export class Logger {
   private level: LogLevel = 'info';
   private prefix: string;
+  private logFilePath?: string;
 
-  constructor(prefix: string = 'OmniForge', level: LogLevel = 'info') {
+  constructor(prefix: string = 'OmniForge', level: LogLevel = 'info', enableFileSink: boolean = true) {
     this.prefix = prefix;
-    this.level = level;
+    this.level = (process.env.OMNIFORGE_LOG_LEVEL as LogLevel) || level;
+
+    if (enableFileSink) {
+      try {
+        const logDir = path.join(process.cwd(), '.omniforge', 'logs');
+        if (!fs.existsSync(logDir)) {
+          fs.mkdirSync(logDir, { recursive: true });
+        }
+        this.logFilePath = path.join(logDir, 'omniforge.log');
+      } catch (err) {
+        // Fallback cleanly
+      }
+    }
   }
 
   public setLevel(level: LogLevel): void {
@@ -31,27 +48,45 @@ export class Logger {
     return `[${time}] [${this.prefix}] [${level.toUpperCase()}]: ${message}${ctxStr}`;
   }
 
+  private writeToFile(formattedMessage: string): void {
+    if (this.logFilePath) {
+      try {
+        fs.appendFileSync(this.logFilePath, formattedMessage + '\n', 'utf-8');
+      } catch (err) {
+        // Ignore file append errors
+      }
+    }
+  }
+
   public debug(message: string, context?: Record<string, unknown>): void {
     if (this.shouldLog('debug')) {
-      console.debug(this.format('debug', message, context));
+      const formatted = this.format('debug', message, context);
+      console.debug(formatted);
+      this.writeToFile(formatted);
     }
   }
 
   public info(message: string, context?: Record<string, unknown>): void {
     if (this.shouldLog('info')) {
-      console.info(this.format('info', message, context));
+      const formatted = this.format('info', message, context);
+      console.info(formatted);
+      this.writeToFile(formatted);
     }
   }
 
   public warn(message: string, context?: Record<string, unknown>): void {
     if (this.shouldLog('warn')) {
-      console.warn(this.format('warn', message, context));
+      const formatted = this.format('warn', message, context);
+      console.warn(formatted);
+      this.writeToFile(formatted);
     }
   }
 
   public error(message: string, context?: Record<string, unknown>): void {
     if (this.shouldLog('error')) {
-      console.error(this.format('error', message, context));
+      const formatted = this.format('error', message, context);
+      console.error(formatted);
+      this.writeToFile(formatted);
     }
   }
 }
