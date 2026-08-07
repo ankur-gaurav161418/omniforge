@@ -2,10 +2,14 @@
   <img src="docs/images/omniforge-logo.png" width="280" alt="OmniForge MCP Logo"/>
 </p>
 
+<p align="center">
+  <img src="docs/images/omniforge-banner.png" width="100%" alt="OmniForge MCP v1.0 Public Launch Banner"/>
+</p>
+
 <h1 align="center">OmniForge MCP</h1>
 
 <p align="center">
-  <strong>Connect • Build • Automate • Supercharge AI Engineering</strong>
+  <strong>Structured Engineering Development MCP Server for AI Coding Assistants</strong>
 </p>
 
 <p align="center">
@@ -22,9 +26,9 @@
 
 ## 📌 Product Overview
 
-**OmniForge MCP** is an enterprise-grade Model Context Protocol (MCP) platform created by **Ankur Gaurav** that enables AI assistants and autonomous agents to securely connect with external tools, APIs, databases, file systems, cloud services, and business applications through a unified, standardized interface.
+**OmniForge MCP** is an enterprise-grade Model Context Protocol (MCP) platform created by **Ankur Gaurav** that enables AI coding assistants and autonomous agents to securely connect with external tools, APIs, databases, file systems, cloud services, and business applications through a unified, standardized interface.
 
-The platform provides a curated ecosystem of production-ready MCP servers, allowing developers to rapidly build, deploy, and orchestrate Agentic AI workflows without creating custom integrations for every application.
+The platform standardizes the way developer teams plan, build, test, and ship software by offering a structured, reliable, and repeatable engineering workflow.
 
 ---
 
@@ -32,11 +36,11 @@ The platform provides a curated ecosystem of production-ready MCP servers, allow
 
 Modern AI applications require reliable context and real-time execution capabilities. OmniForge MCP bridges the gap between Large Language Models (LLMs) and enterprise infrastructure by offering:
 
-- **Unified Connectivity**: Single interface for STDIO, HTTP, and Server-Sent Events (SSE) transports.
-- **Multi-Client Installation**: Single command `omniforge install --all` configures Claude Desktop, Cursor IDE, VS Code, Codex, ChatGPT, Gemini, and Antigravity.
-- **Enterprise Security**: Built-in Bearer Token and API Key authentication middleware.
-- **Agentic Workflows**: Pre-packaged multi-step workflows for engineering, architecture, PRD drafting, testing, debugging, and deployment.
-- **Production Readiness**: Health checks (`/health`), metrics (`/metrics`), zero-downtime hot-reloading, and schema validation.
+- **Structured Workflow**: Follow a proven software engineering process from start to finish.
+- **Engineered for Developers**: Built to support real-world development practices and modern IDEs.
+- **Consistent & Reliable**: Ensure consistency across projects, repositories, and developer teams.
+- **Multi-Client Installation**: Single command `omniforge install --all` configures Claude Desktop, Cursor IDE, VS Code, OpenAI Codex, ChatGPT, Gemini, and Antigravity.
+- **Accelerate Delivery**: Reduce noise, focus on building, and deliver with confidence.
 
 ---
 
@@ -99,11 +103,11 @@ graph TD
 
 ---
 
-## 💻 Supported Platforms
+## 💻 Supported Clients
 
 - **Claude Desktop** (Anthropic MCP Client)
 - **Cursor IDE**
-- **VSCode Extensions**
+- **VS Code Extensions**
 - **OpenAI Codex CLI**
 - **ChatGPT Actions & Custom GPTs**
 - **Google Gemini CLI**
@@ -167,7 +171,7 @@ node mcp/dist/server.js --stdio
 
 ---
 
-## 📂 Repository Organization
+## 📂 Folder Structure
 
 ```
 omniforge/
@@ -193,9 +197,9 @@ omniforge/
 
 ---
 
-## 🏁 Completed Sprint Roadmap (Sprint 1 to 11)
+## 🗺️ Roadmap
 
-All 11 development sprints have been fully completed and documented:
+All 11 development sprints have been fully completed:
 
 | Sprint | Subfolder | Key Deliverables | Status |
 |---|---|---|---|
@@ -213,42 +217,6 @@ All 11 development sprints have been fully completed and documented:
 
 ---
 
-## 🛠️ Example Usage
-
-### Connecting via TypeScript SDK
-
-```typescript
-import { OmniForgeClient } from '@omniforge/sdk';
-
-const client = new OmniForgeClient({ serverUrl: 'http://localhost:8080' });
-
-// 1. Health Diagnostic Check
-const health = await client.getHealth();
-console.log('MCP Server Health:', health.status);
-
-// 2. Execute Engineering Workflow
-const result = await client.runWorkflow('engineering-workflow', {
-  module: 'auth-service',
-  env: 'staging'
-});
-console.log('Execution Result:', result);
-```
-
-### Connecting via Claude Desktop Config (`claude_desktop_config.json`)
-
-```json
-{
-  "mcpServers": {
-    "omniforge-mcp": {
-      "command": "node",
-      "args": ["d:/hackathon/omniforge/mcp/dist/server.js"]
-    }
-  }
-}
-```
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](docs/CONTRIBUTION.md) and [CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md) before submitting pull requests.
@@ -262,12 +230,6 @@ npm test
 
 ---
 
-## 🔒 Security & Vulnerability Reporting
-
-Security policy and vulnerability disclosure procedures are documented in [SECURITY.md](.github/SECURITY.md).
-
----
-
 ## 📄 License
 
 Distributed under the **MIT License**.  
@@ -275,6 +237,9 @@ Copyright (c) 2026 **Ankur Gaurav** ([https://github.com/ankur-gaurav161418](htt
 
 ---
 
-## 🙏 Acknowledgements
+## 💬 Support & Community
 
-Created and maintained by **Ankur Gaurav** for the global AI engineering community.
+- **Repository**: [https://github.com/ankur-gaurav161418/omniforge](https://github.com/ankur-gaurav161418/omniforge)
+- **Issues**: [Submit a Bug or Feature Request](https://github.com/ankur-gaurav161418/omniforge/issues)
+- **Security Policy**: [SECURITY.md](.github/SECURITY.md)
+- **Author**: **Ankur Gaurav** ([https://github.com/ankur-gaurav161418](https://github.com/ankur-gaurav161418))
