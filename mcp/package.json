@@ -1,0 +1,18 @@
+{
+  "name": "@omniforge/mcp-server",
+  "version": "1.0.0",
+  "description": "OmniForge Model Context Protocol (MCP) Server - STDIO, HTTP, SSE Transports",
+  "type": "module",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "vitest run",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@omniforge/core": "1.0.0"
+  },
+  "author": "OmniForge Team",
+  "license": "MIT"
+}

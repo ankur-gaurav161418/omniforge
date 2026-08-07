@@ -1,0 +1,23 @@
+{
+  "name": "omniforge",
+  "version": "1.0.0",
+  "description": "OmniForge CLI - Build • Orchestrate • Supercharge AI Engineering",
+  "type": "module",
+  "bin": {
+    "omniforge": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "vitest run",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@omniforge/core": "1.0.0",
+    "@omniforge/sdk": "1.0.0",
+    "commander": "^12.0.0"
+  },
+  "author": "OmniForge Team",
+  "license": "MIT"
+}

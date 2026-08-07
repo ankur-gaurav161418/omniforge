@@ -1,0 +1,11 @@
+{
+  "name": "Testing Workflow",
+  "id": "testing-workflow",
+  "version": "1.0.0",
+  "description": "Automated unit, integration, and regression testing suite",
+  "steps": [
+    { "step": 1, "name": "Unit Testing", "skill": "test-driven-development" },
+    { "step": 2, "name": "Integration Testing", "command": "npm test" },
+    { "step": 3, "name": "Coverage Verification", "command": "vitest run --coverage" }
+  ]
+}

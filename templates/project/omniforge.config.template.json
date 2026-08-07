@@ -1,0 +1,17 @@
+{
+  "projectName": "My OmniForge App",
+  "version": "1.0.0",
+  "mcpServer": {
+    "transport": "stdio",
+    "port": 8080,
+    "host": "localhost",
+    "authEnabled": false
+  },
+  "telemetry": {
+    "enabled": false
+  },
+  "skills": {
+    "autoLoad": true
+  },
+  "plugins": []
+}

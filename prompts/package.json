@@ -1,0 +1,17 @@
+{
+  "name": "@omniforge/prompts",
+  "version": "1.0.0",
+  "description": "OmniForge Prompt Engine and Categorized Prompt Library",
+  "type": "module",
+  "main": "dist/prompt-engine.js",
+  "types": "dist/prompt-engine.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@omniforge/core": "1.0.0"
+  },
+  "author": "OmniForge Team",
+  "license": "MIT"
+}
