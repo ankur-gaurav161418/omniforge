@@ -1,0 +1,11 @@
+{
+  "id": "architecture-workflow",
+  "name": "Architecture Workflow",
+  "version": "1.0.0",
+  "description": "System architecture review, sequence diagrams, ADR documentation, and modular boundary verification",
+  "steps": [
+    { "step": 1, "name": "Requirements Analysis", "skill": "brainstorming" },
+    { "step": 2, "name": "Architecture Plan Drafting", "skill": "writing-plans" },
+    { "step": 3, "name": "ADR & Verification", "skill": "verification-before-completion" }
+  ]
+}

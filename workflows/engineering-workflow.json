@@ -1,0 +1,13 @@
+{
+  "name": "Engineering Workflow",
+  "id": "engineering-workflow",
+  "version": "1.0.0",
+  "description": "End-to-end software engineering cycle from spec to merged code",
+  "steps": [
+    { "step": 1, "name": "Brainstorming & Requirements", "skill": "brainstorming" },
+    { "step": 2, "name": "Architecture & Plan", "skill": "writing-plans" },
+    { "step": 3, "name": "Test Driven Development", "skill": "test-driven-development" },
+    { "step": 4, "name": "Code Review", "skill": "requesting-code-review" },
+    { "step": 5, "name": "Verification & Merge", "skill": "verification-before-completion" }
+  ]
+}

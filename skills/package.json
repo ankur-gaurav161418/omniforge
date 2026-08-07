@@ -1,0 +1,17 @@
+{
+  "name": "@omniforge/skills",
+  "version": "1.0.0",
+  "description": "OmniForge Skill Engine and Skill Catalog",
+  "type": "module",
+  "main": "dist/skill-engine.js",
+  "types": "dist/skill-engine.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@omniforge/core": "1.0.0"
+  },
+  "author": "OmniForge Team",
+  "license": "MIT"
+}
