@@ -14,7 +14,7 @@
   <a href="https://github.com/ankur-gaurav161418/omniforge/network/members"><img src="https://img.shields.io/github/forks/ankur-gaurav161418/omniforge?style=flat&color=orange" alt="Forks"/></a>
   <a href="https://github.com/ankur-gaurav161418/omniforge/issues"><img src="https://img.shields.io/github/issues/ankur-gaurav161418/omniforge?style=flat&color=brightgreen" alt="Issues"/></a>
   <a href="https://github.com/ankur-gaurav161418/omniforge/pulls"><img src="https://img.shields.io/github/issues-pr/ankur-gaurav161418/omniforge?style=flat&color=blue" alt="Pull Requests"/></a>
-  <a href="https://github.com/ankur-gaurav161418/omniforge/releases"><img src="https://img.shields.io/badge/Release-v1.5.0-success.svg" alt="Release"/></a>
+  <a href="https://github.com/ankur-gaurav161418/omniforge/releases"><img src="https://img.shields.io/badge/Release-v1.0.0-success.svg" alt="Release"/></a>
   <a href="https://github.com/ankur-gaurav161418"><img src="https://img.shields.io/badge/Author-Ankur%20Gaurav-blue.svg" alt="Author"/></a>
 </p>
 
@@ -33,6 +33,7 @@ The platform provides a curated ecosystem of production-ready MCP servers, allow
 Modern AI applications require reliable context and real-time execution capabilities. OmniForge MCP bridges the gap between Large Language Models (LLMs) and enterprise infrastructure by offering:
 
 - **Unified Connectivity**: Single interface for STDIO, HTTP, and Server-Sent Events (SSE) transports.
+- **Multi-Client Installation**: Single command `omniforge install --all` configures Claude Desktop, Cursor IDE, VS Code, Codex, ChatGPT, Gemini, and Antigravity.
 - **Enterprise Security**: Built-in Bearer Token and API Key authentication middleware.
 - **Agentic Workflows**: Pre-packaged multi-step workflows for engineering, architecture, PRD drafting, testing, debugging, and deployment.
 - **Production Readiness**: Health checks (`/health`), metrics (`/metrics`), zero-downtime hot-reloading, and schema validation.
@@ -49,6 +50,8 @@ Modern AI applications require reliable context and real-time execution capabili
 | **Prompt Engine** | ✅ Production Ready | 10 enterprise prompt library templates with variable interpolation (`{{var}}`) |
 | **Resource Registry** | ✅ Production Ready | Standardized `omniforge://` URI schemas for architecture docs and catalogs |
 | **CLI Control Suite** | ✅ Production Ready | 12 operational subcommands (`init`, `doctor`, `install`, `search`, `workflow`, etc.) |
+| **Multi-Client Installers** | ✅ Production Ready | Automated setup for Claude, Cursor, VS Code, Codex, ChatGPT, Gemini, and Antigravity |
+| **Plugin Ecosystem** | ✅ Production Ready | Dynamic plugin manager with `git-enhancer` and `security-auditor` |
 | **Authentication Middleware** | ✅ Production Ready | API Key and Bearer token security hooks for HTTP & SSE endpoints |
 | **TypeScript & Python SDKs** | ✅ Production Ready | Strongly-typed client libraries for TypeScript and Python |
 
@@ -64,7 +67,10 @@ graph TD
         Claude["Claude Desktop"]
         Cursor["Cursor IDE"]
         VSCode["VSCode Extension"]
-        Custom["Custom LLM Agent"]
+        Codex["OpenAI Codex"]
+        ChatGPT["ChatGPT Actions"]
+        Gemini["Google Gemini"]
+        Antigravity["Google Antigravity"]
     end
 
     subgraph Transports["Multi-Transport Gateway"]
@@ -79,6 +85,7 @@ graph TD
         PromptReg["Prompt Registry (10 Templates)"]
         ResourceReg["Resource Registry (omniforge://)"]
         Runner["Workflow Execution Engine"]
+        PluginMgr["Plugin Manager & Marketplace"]
     end
 
     Clients -->|STDIO / HTTP / SSE| Transports
@@ -87,6 +94,7 @@ graph TD
     Auth --> PromptReg
     Auth --> ResourceReg
     ToolReg --> Runner
+    ToolReg --> PluginMgr
 ```
 
 ---
@@ -96,8 +104,11 @@ graph TD
 - **Claude Desktop** (Anthropic MCP Client)
 - **Cursor IDE**
 - **VSCode Extensions**
+- **OpenAI Codex CLI**
+- **ChatGPT Actions & Custom GPTs**
+- **Google Gemini CLI**
+- **Google Antigravity Agent**
 - **LangChain & LlamaIndex Agents**
-- **OpenAI Assistants SDK**
 - **Custom Autonomous AI Agents**
 
 ---
@@ -116,6 +127,11 @@ Or run via `npx`:
 npx omniforge doctor
 ```
 
+Install MCP integration into all supported AI clients:
+```bash
+omniforge install --all
+```
+
 ---
 
 ## ⚡ Quick Start
@@ -132,7 +148,13 @@ Generate `.omniforge/config.json` in your project directory:
 omniforge init
 ```
 
-### 3. Start Production MCP Server
+### 3. Install AI Client Configurations
+Auto-detect and generate MCP configuration files:
+```bash
+omniforge install --all
+```
+
+### 4. Start Production MCP Server
 Start the server in HTTP/SSE mode (default port 8080):
 ```bash
 npm run mcp:start
@@ -151,23 +173,43 @@ node mcp/dist/server.js --stdio
 omniforge/
 ├── apps/               # Modern Documentation & Interactive Dashboard App
 ├── packages/           # Monorepo Core & Client SDKs
-│   ├── core/           # ConfigManager, Logger, Telemetry, PluginLoader
+│   ├── core/           # ConfigManager, Logger, Telemetry, PluginLoader, UpdateManager
 │   └── sdk/            # TypeScript & Python Client SDKs
 ├── mcp/                # Production MCP Server (STDIO, HTTP, SSE)
 │   ├── mcp.json        # MCP Manifest Descriptor
 │   └── src/            # Transports, Handlers, Middleware
-├── cli/                # OmniForge CLI Control Suite
+├── cli/                # OmniForge CLI Control Suite & Installers
 ├── skills/             # 14 Standardized & Categorized Agent Skills
 ├── prompts/            # 10 Enterprise Prompt Library Templates
 ├── workflows/          # 10 Executable Engineering Workflows
 ├── templates/          # Generator Templates (Project, Skill, Prompt, Plugin)
-├── plugins/            # Dynamic Plugin System & Extension Ecosystem
-├── docs/               # Architecture Guides, API Reference, Tutorials
+├── plugins/            # Dynamic Plugin System & Marketplace Architecture
+├── docs/               # 16 Complete Documentation Guides & Tutorials
 ├── examples/           # Executable Demos & SDK Usage
-├── tests/              # Vitest Test Suite (Unit, Integration, CLI, MCP)
-├── sprints/            # Sprint Deliverables Tracking (Sprint 1 to 6)
+├── tests/              # Vitest Test Suite (18 Test Files, 52 Tests)
+├── sprints/            # 11 Sprint Deliverables Tracking (Sprint 1 to 11)
 └── docker/             # Dockerfile & Docker Compose Configs
 ```
+
+---
+
+## 🏁 Completed Sprint Roadmap (Sprint 1 to 11)
+
+All 11 development sprints have been fully completed and documented:
+
+| Sprint | Subfolder | Key Deliverables | Status |
+|---|---|---|---|
+| **Sprint 1** | [`sprints/sprint-1/`](sprints/sprint-1/README.md) | Monorepo Setup & Core Layout | ✅ Completed |
+| **Sprint 2** | [`sprints/sprint-2/`](sprints/sprint-2/README.md) | Architecture & Error Hierarchy | ✅ Completed |
+| **Sprint 3** | [`sprints/sprint-3/`](sprints/sprint-3/README.md) | Multi-Transport MCP Server (STDIO, HTTP, SSE) | ✅ Completed |
+| **Sprint 4** | [`sprints/sprint-4/`](sprints/sprint-4/README.md) | 14 Agent Skills Migration & Validation | ✅ Completed |
+| **Sprint 5** | [`sprints/sprint-5/`](sprints/sprint-5/README.md) | Enterprise Prompt Library & Prompt Engine | ✅ Completed |
+| **Sprint 6** | [`sprints/sprint-6/`](sprints/sprint-6/README.md) | OmniForge CLI Suite & Master Rebranding | ✅ Completed |
+| **Sprint 7** | [`sprints/sprint-7/`](sprints/sprint-7/README.md) | Plugin Loader Ecosystem & Marketplace Schema | ✅ Completed |
+| **Sprint 8** | [`sprints/sprint-8/`](sprints/sprint-8/README.md) | Multi-Client MCP Installer Suite (7 AI Clients) | ✅ Completed |
+| **Sprint 9** | [`sprints/sprint-9/`](sprints/sprint-9/README.md) | Complete 16 Documentation Guides & Portal | ✅ Completed |
+| **Sprint 10** | [`sprints/sprint-10/`](sprints/sprint-10/README.md) | Performance, Regression & Coverage Test Suite | ✅ Completed |
+| **Sprint 11** | [`sprints/sprint-11/`](sprints/sprint-11/README.md) | v1.0.0 Production Release & Public Launch | ✅ Completed |
 
 ---
 
@@ -207,21 +249,9 @@ console.log('Execution Result:', result);
 
 ---
 
-## 🗺️ Roadmap
-
-- [x] **Sprint 1**: Monorepo Foundation & Initial Architecture
-- [x] **Sprint 2**: Modularity & Domain Error Hierarchy
-- [x] **Sprint 3**: Multi-Transport Production MCP Server (STDIO, HTTP, SSE)
-- [x] **Sprint 4**: 14 Agent Skills Migration & Schema Validation
-- [x] **Sprint 5**: Enterprise Prompt Library & Prompt Engine
-- [x] **Sprint 6**: OmniForge CLI Control Suite & Environment Validation
-- [ ] **Sprint 7**: Hosted Plugin Marketplace & Web Dashboard
-
----
-
 ## 🤝 Contributing
 
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before submitting pull requests.
+Contributions are welcome! Please read [CONTRIBUTING.md](docs/CONTRIBUTION.md) and [CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md) before submitting pull requests.
 
 ```bash
 git clone https://github.com/ankur-gaurav161418/omniforge.git
@@ -234,7 +264,7 @@ npm test
 
 ## 🔒 Security & Vulnerability Reporting
 
-Security policy and vulnerability disclosure procedures are documented in [SECURITY.md](SECURITY.md).
+Security policy and vulnerability disclosure procedures are documented in [SECURITY.md](.github/SECURITY.md).
 
 ---
 
