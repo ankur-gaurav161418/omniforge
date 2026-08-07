@@ -16,7 +16,7 @@
   "dependencies": {
     "@omniforge/core": "1.0.0",
     "@omniforge/sdk": "1.0.0",
-    "commander": "^12.0.0"
+    "commander": "^15.0.0"
   },
   "author": "OmniForge Team",
   "license": "MIT"
