@@ -1,0 +1,25 @@
+{
+  "sprint": 8,
+  "name": "Multi-Client MCP Installer Suite",
+  "version": "1.7.0",
+  "status": "completed",
+  "author": "Ankur Gaurav",
+  "license": "MIT (Copyright (c) 2026 Ankur Gaurav)",
+  "supportedClients": [
+    "claude",
+    "cursor",
+    "vscode",
+    "codex",
+    "chatgpt",
+    "gemini",
+    "antigravity"
+  ],
+  "deliverables": [
+    "BaseClientInstaller Abstract Lifecycle Engine",
+    "7 AI Client & IDE Installers",
+    "Single-Command Installer Registry (omniforge install)",
+    "Config Auto-Update & Connection Diagnostic Verification",
+    "100% Multi-Client Installer Test Suite in Vitest",
+    "Dedicated Sprint 8 Tracking Manifests"
+  ]
+}
