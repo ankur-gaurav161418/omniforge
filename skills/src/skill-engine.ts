@@ -1,5 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { SkillValidator } from './skill-validator.js';
+import { SkillIndexer } from './skill-indexer.js';
 
 export interface SkillMetadata {
   name: string;
@@ -8,6 +10,7 @@ export interface SkillMetadata {
   version: string;
   author: string;
   tags: string[];
+  examples?: string[];
 }
 
 export interface SkillDefinition {
@@ -19,6 +22,7 @@ export interface SkillDefinition {
 
 export class SkillEngine {
   private skillsMap: Map<string, SkillDefinition> = new Map();
+  private indexer: SkillIndexer = new SkillIndexer();
   private baseDir: string;
 
   constructor(customBaseDir?: string) {
@@ -28,21 +32,25 @@ export class SkillEngine {
 
   public discoverSkills(): void {
     try {
-      if (!fs.existsSync(this.baseDir)) return;
-      const entries = fs.readdirSync(this.baseDir, { withFileTypes: true });
+      const searchDirs = [this.baseDir, path.join(this.baseDir, 'catalog')];
+      for (const dir of searchDirs) {
+        if (!fs.existsSync(dir)) continue;
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-      for (const entry of entries) {
-        if (entry.isDirectory()) {
-          const skillFilePath = path.join(this.baseDir, entry.name, 'SKILL.md');
-          if (fs.existsSync(skillFilePath)) {
-            const content = fs.readFileSync(skillFilePath, 'utf-8');
-            const parsed = this.parseSkillMarkdown(entry.name, content, skillFilePath);
-            this.skillsMap.set(parsed.id, parsed);
+        for (const entry of entries) {
+          if (entry.isDirectory()) {
+            const skillFilePath = path.join(dir, entry.name, 'SKILL.md');
+            if (fs.existsSync(skillFilePath)) {
+              const content = fs.readFileSync(skillFilePath, 'utf-8');
+              const parsed = this.parseSkillMarkdown(entry.name, content, skillFilePath);
+              this.skillsMap.set(parsed.id, parsed);
+              this.indexer.indexSkill(parsed);
+            }
           }
         }
       }
     } catch (err) {
-      // Fallback cleanly
+      // Fallback
     }
   }
 
@@ -55,7 +63,7 @@ export class SkillEngine {
       description: `OmniForge skill for ${id}`,
       category: 'general',
       version: '1.0.0',
-      author: 'OmniForge Team (Derived from obra/superpowers)',
+      author: 'OmniForge Team (Derived from obra/superpowers by Jesse Vincent)',
       tags: [id, 'omniforge'],
     };
 
@@ -64,10 +72,21 @@ export class SkillEngine {
       rawYaml.split('\n').forEach((line) => {
         const [k, ...v] = line.split(':');
         if (k && v.length) {
-          const val = v.join(':').trim().replace(/^['"]|['"]$/g, '');
-          if (k.trim() === 'name') metadata.name = val;
-          if (k.trim() === 'description') metadata.description = val;
-          if (k.trim() === 'category') metadata.category = val as any;
+          const val = v.join(':').trim();
+          const key = k.trim();
+          if (key === 'name') metadata.name = val.replace(/^['"]|['"]$/g, '');
+          if (key === 'description') metadata.description = val.replace(/^['"]|['"]$/g, '');
+          if (key === 'category') metadata.category = val.replace(/^['"]|['"]$/g, '') as any;
+          if (key === 'version') metadata.version = val.replace(/^['"]|['"]$/g, '');
+          if (key === 'author') metadata.author = val.replace(/^['"]|['"]$/g, '');
+          if (key === 'tags') {
+            try {
+              const cleaned = val.replace(/'/g, '"');
+              metadata.tags = JSON.parse(cleaned);
+            } catch (e) {
+              metadata.tags = val.replace(/[\[\]'"]/g, '').split(',').map((t) => t.trim());
+            }
+          }
         }
       });
     }
@@ -85,24 +104,11 @@ export class SkillEngine {
   }
 
   public searchSkills(query: string): SkillDefinition[] {
-    const q = query.toLowerCase();
-    return Array.from(this.skillsMap.values()).filter(
-      (s) =>
-        s.id.toLowerCase().includes(q) ||
-        s.metadata.name.toLowerCase().includes(q) ||
-        s.metadata.description.toLowerCase().includes(q)
-    );
+    return this.indexer.search(query, this.skillsMap);
   }
 
-  public validateSkill(skill: SkillDefinition): { valid: boolean; errors: string[] } {
-    const errors: string[] = [];
-    if (!skill.id) errors.push('Skill ID is required');
-    if (!skill.metadata.name) errors.push('Skill name is required');
-    if (!skill.metadata.description) errors.push('Skill description is required');
-    return {
-      valid: errors.length === 0,
-      errors,
-    };
+  public validateSkill(skill: SkillDefinition) {
+    return SkillValidator.validate(skill.metadata);
   }
 
   public listSkills(): SkillDefinition[] {

@@ -1,0 +1,32 @@
+{
+  "sprint": 4,
+  "name": "Full Skill Migration & Advanced Skill Engine",
+  "version": "1.3.0",
+  "status": "completed",
+  "totalSkillsMigrated": 14,
+  "upstreamReference": "https://github.com/obra/superpowers",
+  "license": "MIT (Preserved Attribution to Jesse Vincent)",
+  "skills": [
+    "brainstorming",
+    "systematic-debugging",
+    "test-driven-development",
+    "subagent-driven-development",
+    "verification-before-completion",
+    "executing-plans",
+    "writing-plans",
+    "writing-skills",
+    "using-git-worktrees",
+    "dispatching-parallel-agents",
+    "receiving-code-review",
+    "requesting-code-review",
+    "finishing-a-development-branch",
+    "using-omniforge"
+  ],
+  "deliverables": [
+    "Full Migration & Rebranding of 14 Agent Skills",
+    "YAML Frontmatter Schema Validator (SkillValidator)",
+    "Full-Text & Tag Search Indexer (SkillIndexer)",
+    "100% Skill Validation Test Suite in Vitest",
+    "Dedicated Sprint 4 Tracking Manifests"
+  ]
+}
