@@ -100,5 +100,6 @@ npm run mcp:start
 ## License & Attribution
 
 Distributed under the **MIT License**.
-Original Upstream Work Copyright (c) 2025 Jesse Vincent (`obra/superpowers`).
-OmniForge Distribution Copyright (c) 2026 OmniForge Contributors.
+Copyright (c) 2026 **Ankur Gaurav**.
+Upstream Foundation Copyright (c) 2025 Jesse Vincent (`obra/superpowers`).
+See [NOTICE.md](NOTICE.md) for detailed attribution notes.
