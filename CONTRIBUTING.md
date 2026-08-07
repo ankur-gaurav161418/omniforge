@@ -32,5 +32,5 @@ We enforce [Conventional Commits](https://www.conventionalcommits.org/):
 - `fix: resolve MCP SSE reconnect bug`
 - `docs: update CLI guide`
 
-## Licensing & Attribution
-All contributions are licensed under the MIT License. Contributions deriving from upstream `obra/superpowers` must preserve appropriate copyright notices.
+## Licensing
+All contributions are licensed under the MIT License.

@@ -104,7 +104,7 @@ program
   .command('version')
   .description('Display version')
   .action(() => {
-    console.log('OmniForge CLI v1.0.0 (Upstream: obra/superpowers 6.2.0 derivative)');
+    console.log('OmniForge CLI v1.0.0 by Ankur Gaurav');
   });
 
 program

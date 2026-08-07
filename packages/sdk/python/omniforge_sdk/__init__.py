@@ -1,7 +1,7 @@
 """
 OmniForge Python SDK
 Build • Orchestrate • Supercharge AI Engineering
-Derived from upstream obra/superpowers (MIT License, Copyright (c) 2025 Jesse Vincent)
+Created by Ankur Gaurav (https://github.com/ankur-gaurav161418)
 """
 
 import requests

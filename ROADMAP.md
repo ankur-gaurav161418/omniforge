@@ -1,8 +1,8 @@
 # OmniForge Product Roadmap
 
 ## Q3 2026 - v1.0 Release (Current)
-- [x] Initial Rebrand from `obra/superpowers`.
-- [x] Monorepo restructuring (`packages/`, `cli/`, `mcp/`, `skills/`, `prompts/`, `workflows/`).
+- [x] Initial release of OmniForge by Ankur Gaurav.
+- [x] Monorepo architecture (`packages/`, `cli/`, `mcp/`, `skills/`, `prompts/`, `workflows/`).
 - [x] Multi-transport MCP Server (STDIO, HTTP, SSE).
 - [x] 17 Subcommand CLI interface.
 - [x] TypeScript & Python SDKs.

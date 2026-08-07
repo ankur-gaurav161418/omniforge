@@ -3,13 +3,11 @@ name: Test Driven Development
 description: Strict Red-Green-Refactor implementation methodology for high quality, regression-free software.
 category: testing
 version: 1.3.0
-author: OmniForge Team (Derived from obra/superpowers by Jesse Vincent)
+author: Ankur Gaurav
 tags: ['tdd', 'testing', 'red-green-refactor', 'unit-tests', 'omniforge']
 ---
 
 # OmniForge Test Driven Development (TDD) Skill
-
-> **Upstream Attribution**: Derived from `obra/superpowers` created by Jesse Vincent under MIT License.
 
 ## Purpose
 Ensure every feature and bugfix is built on a foundation of automated unit tests.

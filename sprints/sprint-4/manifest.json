@@ -1,11 +1,11 @@
 {
   "sprint": 4,
-  "name": "Full Skill Migration & Advanced Skill Engine",
+  "name": "Full Skill Engine & Catalog Optimization",
   "version": "1.3.0",
   "status": "completed",
-  "totalSkillsMigrated": 14,
-  "upstreamReference": "https://github.com/obra/superpowers",
-  "license": "MIT (Preserved Attribution to Jesse Vincent)",
+  "totalSkills": 14,
+  "author": "Ankur Gaurav",
+  "license": "MIT (Copyright (c) 2026 Ankur Gaurav)",
   "skills": [
     "brainstorming",
     "systematic-debugging",
@@ -23,7 +23,7 @@
     "using-omniforge"
   ],
   "deliverables": [
-    "Full Migration & Rebranding of 14 Agent Skills",
+    "Full Standardization of 14 Agent Skills by Ankur Gaurav",
     "YAML Frontmatter Schema Validator (SkillValidator)",
     "Full-Text & Tag Search Indexer (SkillIndexer)",
     "100% Skill Validation Test Suite in Vitest",

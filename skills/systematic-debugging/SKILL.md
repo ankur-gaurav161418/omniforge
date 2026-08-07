@@ -3,12 +3,10 @@ name: Systematic Debugging
 description: Scientific root-cause isolation and step-by-step resolution of complex runtime bugs.
 category: debugging
 version: 1.0.0
-author: OmniForge Team (Derived from obra/superpowers)
+author: Ankur Gaurav
 ---
 
 # OmniForge Systematic Debugging Skill
-
-> **Upstream Reference**: Derived from `obra/superpowers` under MIT License.
 
 ## Purpose
 Prevent superficial symptom patching by enforcing empirical hypothesis testing, full log inspection, and reproducible test cases.

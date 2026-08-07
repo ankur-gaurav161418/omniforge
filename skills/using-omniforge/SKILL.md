@@ -3,12 +3,10 @@ name: Using OmniForge Framework
 description: Primary guide for using OmniForge CLI, MCP Server, workflows, and agent skills effectively.
 category: general
 version: 1.0.0
-author: OmniForge Team (Derived from obra/superpowers)
+author: Ankur Gaurav
 ---
 
 # Using OmniForge Framework
-
-> **Upstream Reference**: Derived from `obra/superpowers` under MIT License.
 
 ## Purpose
 Overview of the OmniForge ecosystem, runtime configuration, and available subcommands.

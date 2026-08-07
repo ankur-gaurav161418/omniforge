@@ -1,10 +1,10 @@
 {
   "sprint": 1,
-  "name": "Foundation & Initial Rebrand",
+  "name": "Foundation & Framework Launch",
   "version": "1.0.0",
   "status": "completed",
-  "upstreamReference": "https://github.com/obra/superpowers",
-  "license": "MIT (Preserved Attribution to Jesse Vincent)",
+  "author": "Ankur Gaurav",
+  "license": "MIT (Copyright (c) 2026 Ankur Gaurav)",
   "deliverables": [
     "Monorepo Repository Layout",
     "OmniForge CLI Entrypoint",

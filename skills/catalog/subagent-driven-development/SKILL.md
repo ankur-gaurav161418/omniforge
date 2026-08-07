@@ -3,13 +3,11 @@ name: Subagent Driven Development
 description: Orchestrate specialized, autonomous AI agents to execute parallel subtasks with strict boundaries.
 category: workflow
 version: 1.3.0
-author: OmniForge Team (Derived from obra/superpowers by Jesse Vincent)
+author: Ankur Gaurav
 tags: ['subagent', 'multi-agent', 'orchestration', 'parallel', 'omniforge']
 ---
 
 # OmniForge Subagent Driven Development Skill
-
-> **Upstream Attribution**: Derived from `obra/superpowers` created by Jesse Vincent under MIT License.
 
 ## Purpose
 Decompose large tasks into isolated subtasks, dispatching subagents with explicit requirements and context.

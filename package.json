@@ -30,7 +30,7 @@
     "tdd",
     "superpowers"
   ],
-  "author": "OmniForge Team (Derived from obra/superpowers by Jesse Vincent)",
+  "author": "Ankur Gaurav (https://github.com/ankur-gaurav161418)",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.11.0",

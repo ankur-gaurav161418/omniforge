@@ -1,7 +1,7 @@
 {
   "name": "@omniforge/skills",
   "version": "1.0.0",
-  "description": "OmniForge Skill Engine and Upgraded Skill Catalog (Derived from obra/superpowers)",
+  "description": "OmniForge Skill Engine and Skill Catalog",
   "type": "module",
   "main": "dist/skill-engine.js",
   "types": "dist/skill-engine.d.ts",

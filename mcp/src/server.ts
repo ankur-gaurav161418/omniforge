@@ -69,7 +69,7 @@ export class OmniForgeMCPServer {
               serverInfo: {
                 name: 'OmniForge MCP Server',
                 version: '1.2.0',
-                upstream: 'obra/superpowers',
+                author: 'Ankur Gaurav',
               },
             },
           };
@@ -147,7 +147,7 @@ export class OmniForgeMCPServer {
     return {
       status: 'healthy',
       version: '1.2.0',
-      upstream: 'obra/superpowers (MIT License)',
+      author: 'Ankur Gaurav',
       uptimeSeconds: Math.floor((Date.now() - this.startTime) / 1000),
       transportsSupported: ['stdio', 'http', 'sse'],
       toolsRegistered: this.toolRegistry.listTools().length,

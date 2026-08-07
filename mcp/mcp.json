@@ -3,7 +3,7 @@
   "name": "OmniForge MCP Server",
   "version": "1.2.0",
   "description": "Production-Ready MCP Server for OmniForge AI Engineering Framework",
-  "vendor": "OmniForge Team (Derived from obra/superpowers by Jesse Vincent)",
+  "vendor": "Ankur Gaurav",
   "homepage": "https://github.com/ankur-gaurav161418/omniforge",
   "license": "MIT",
   "protocolVersion": "2024-11-05",

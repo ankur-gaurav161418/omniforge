@@ -63,7 +63,7 @@ export class SkillEngine {
       description: `OmniForge skill for ${id}`,
       category: 'general',
       version: '1.0.0',
-      author: 'OmniForge Team (Derived from obra/superpowers by Jesse Vincent)',
+      author: 'Ankur Gaurav',
       tags: [id, 'omniforge'],
     };
 

@@ -5,24 +5,23 @@
  / __   |                 (_|  ___/                                 
 | |  |  | _ __  _ __  _    _| |__  ___  _ __  __ _  ___             
 | |  |  || '_ \| '_ \| |  | |  __/ _ \| '__|/ _` |/ _ \            
-| |__|  || | | | | | | |__| | | | (_) | |  | (_| |  __/            
+| |__|  || | | | | | |__| | | | (_) | |  | (_| |  __/            
  \______/|_| |_|_| |_|\____/|_|  \___/|_|   \__, |\___|            
                                              __/ |                  
                                             |___/                   
  Build • Orchestrate • Supercharge AI Engineering
+ Created by Ankur Gaurav
 ```
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build Status](https://img.shields.io/badge/CI-Passing-brightgreen.svg)]()
-[![Upstream Reference](https://img.shields.io/badge/Upstream-obra%2Fsuperpowers-orange.svg)](https://github.com/obra/superpowers)
-
-> **Upstream Attribution**: OmniForge is an enterprise AI Engineering Framework derived from [superpowers](https://github.com/obra/superpowers) by Jesse Vincent (`obra/superpowers`). Original MIT Copyright (c) 2025 Jesse Vincent. See [NOTICE.md](NOTICE.md) for detailed attribution.
+[![Author](https://img.shields.io/badge/Author-Ankur%20Gaurav-blue.svg)](https://github.com/ankur-gaurav161418)
 
 ---
 
 ## Executive Summary
 
-OmniForge is an enterprise-grade AI Engineering Framework that unifies AI Agent Skills, Prompt Engineering, Multi-Transport MCP Servers (STDIO, HTTP, SSE), and Engineering Workflows under a clean monorepo architecture.
+OmniForge is an enterprise-grade AI Engineering Framework created by **Ankur Gaurav**. It unifies AI Agent Skills, Prompt Engineering, Multi-Transport MCP Servers (STDIO, HTTP, SSE), and Engineering Workflows under a clean monorepo architecture.
 
 ## Architecture Overview
 
@@ -80,7 +79,7 @@ npm run mcp:start
 | `omniforge repair` | Repair workspace configuration |
 | `omniforge uninstall` | Cleanly remove OmniForge |
 
-## Core Skills Catalog (14 Upstream & Extended Skills)
+## Core Skills Catalog (14 Skills)
 
 1. `brainstorming`: Interactive design session
 2. `systematic-debugging`: Root-cause defect isolation
@@ -97,9 +96,7 @@ npm run mcp:start
 13. `finishing-a-development-branch`: Branch merging & changelog update
 14. `using-omniforge`: Primary framework guide
 
-## License & Attribution
+## License & Copyright
 
-Distributed under the **MIT License**.
-Copyright (c) 2026 **Ankur Gaurav**.
-Upstream Foundation Copyright (c) 2025 Jesse Vincent (`obra/superpowers`).
-See [NOTICE.md](NOTICE.md) for detailed attribution notes.
+Distributed under the **MIT License**.  
+Copyright (c) 2026 **Ankur Gaurav** ([https://github.com/ankur-gaurav161418](https://github.com/ankur-gaurav161418)).

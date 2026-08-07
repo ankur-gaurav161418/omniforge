@@ -3,13 +3,11 @@ name: Brainstorming & Architectural Design
 description: Interactive design process to explore architecture, requirements, and user experience before writing code.
 category: architecture
 version: 1.3.0
-author: OmniForge Team (Derived from obra/superpowers by Jesse Vincent)
+author: Ankur Gaurav
 tags: ['brainstorming', 'architecture', 'design', 'planning', 'omniforge']
 ---
 
 # OmniForge Brainstorming & Architectural Design Skill
-
-> **Upstream Attribution**: Derived from `obra/superpowers` created by Jesse Vincent under MIT License.
 
 ## Purpose
 Guide AI agents and human engineers through structured interactive design sessions before jumping straight to code implementation.
