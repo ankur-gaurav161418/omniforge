@@ -33,7 +33,7 @@
   "author": "Ankur Gaurav (https://github.com/ankur-gaurav161418)",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.11.0",
+    "@types/node": "^26.6.5",
     "typescript": "^5.3.3",
     "vitest": "^1.3.0",
     "prettier": "^3.2.5",
